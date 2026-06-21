@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-akatab: var(--font-akatab-next), sans-serif;
+  --font-notable: var(--font-notable-next), sans-serif;
+  --font-krona: var(--font-krona-next), sans-serif;
+
+  --animate-slide-right: slideRight 1.2s ease-out forwards;
+  --animate-float: float 4s ease-in-out infinite;
+
+  --animate-marquee-left: marqueeLeft 25s linear infinite;
+  --animate-marquee-right: marqueeRight 25s linear infinite;
+}
+
+/* Animations Slide Right */
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animations Float Looping */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+/* Animations Marquee */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+@layer base {
+  :root {
+    /* Background & Foreground (Text) */
+    --background: #ffffff;
+    --foreground: #0f172a;
+
+    /* Brand Colors (Ubah sesuai identitas portofoliomu) */
+    --primary: #2563eb;        
+    --primary-hover: #1d4ed8;  
+    --secondary: #64748b;      
+    
+    /* Neutral Colors untuk Card, Border, dll */
+    --navbar: #363F5C;
+    --card: #f8fafc;           
+    --card-border: #e2e8f0;    
+    --muted: #475569;          
+  }
+
+  /* Setup untuk Dark Mode (Opsional untuk nanti) */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0f172a;   
+      --foreground: #f8fafc;   
+      
+      --primary: #3b82f6;      
+      --primary-hover: #60a5fa;
+      --secondary: #94a3b8;    
+      
+      --card: #1e293b;         
+      --card-border: #334155;  
+      --muted: #cbd5e1;        
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-(--card-border) transition-colors duration-200;
+  }
+  
+  body {
+    @apply bg-(--background) text-(--foreground) antialiased min-h-screen selection:bg-blue-500/30;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom Utility Classes (Jika dibutuhkan nanti) */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
