@@ -24,6 +24,9 @@ const kronaOne = Krona_One({
 export const metadata: Metadata = {
   title: "Portofolio Erland Widyatamaka",
   description: "Portofolio Erland Widyatamaka, a man who interests in machine learning, data science, and software engineering.",
+  icons: {
+    icon: "/icons/logo-er.svg",
+  }
 };
 
 export default function RootLayout({

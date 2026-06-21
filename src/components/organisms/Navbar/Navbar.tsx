@@ -29,7 +29,7 @@ export const Navbar = () => {
             <div className="flex items-center justify-center md:justify-between h-14 w-14 md:h-20 md:w-auto md:px-8 shadow-md shadow-[#f0f0f0]/10 bg-[#2c334a]/80 backdrop-blur-md rounded-full md:rounded-none md:rounded-tl-full md:rounded-bl-full transition-all duration-300">
                 
                 <Link href="/" className="flex items-center justify-center">
-                    <Image src="/icons/logo-er.svg" alt="logo" width={32} height={32} className="md:w-10 md:h-10" />
+                    <Image src="/icons/logo-er.svg" alt="logo" width={32} height={32} className="w-8 h-8 md:w-10 md:h-10" style={{ width: 'auto', height: 'auto' }}/>
                 </Link>
 
                 <div className="font-krona hidden md:flex items-center gap-10 text-[10px] tracking-wider ml-10">

@@ -59,6 +59,7 @@ export const ProfileCard = ({ imageSrc, altText, className, hasShadow = true }: 
                     src={imageSrc} 
                     alt={altText} 
                     fill
+                    sizes="(max-width: 768px) 100vw, 240px"
                     className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-500 ease-in-out" 
                 />
             </div>

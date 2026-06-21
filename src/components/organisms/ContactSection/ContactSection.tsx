@@ -33,6 +33,7 @@ export const ContactSection = () => {
             } else {
                 setStatus("error");
             }
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
             setStatus("error");
         }
@@ -78,7 +79,7 @@ export const ContactSection = () => {
                             </div>
                         )}
 
-                        <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10" suppressHydrationWarning>
                             <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
                             <div className="flex flex-col gap-6">
@@ -91,6 +92,7 @@ export const ContactSection = () => {
                                         required
                                         placeholder="hello@example.com"
                                         className="w-full bg-[#2c334a] border border-white/10 rounded-xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all placeholder:text-gray-500"
+                                        suppressHydrationWarning
                                     />
                                 </div>
 
@@ -102,6 +104,7 @@ export const ContactSection = () => {
                                         id="phone" 
                                         placeholder="+62 812 3456 7890"
                                         className="w-full bg-[#2c334a] border border-white/10 rounded-xl px-5 py-4 text-white text-sm focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all placeholder:text-gray-500"
+                                        suppressHydrationWarning
                                     />
                                 </div>
                             </div>
@@ -128,6 +131,7 @@ export const ContactSection = () => {
                                 type="submit" 
                                 disabled={status === "loading"}
                                 className="w-full mt-2 bg-linear-to-r from-blue-500 to-emerald-500 hover:from-blue-600 hover:to-emerald-600 text-white font-akatab text-lg py-4 rounded-xl transition-all shadow-lg hover:shadow-blue-500/25 disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center gap-2"
+                                suppressHydrationWarning
                             >
                                 {status === "loading" ? (
                                     <>
