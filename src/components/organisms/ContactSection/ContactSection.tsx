@@ -13,7 +13,7 @@ export const ContactSection = () => {
 
         const formData = new FormData(e.currentTarget);
         
-        formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+        formData.append("access_key", "f3e93440-4d38-4ba5-9f59-240f911bdc66");
 
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -29,7 +29,6 @@ export const ContactSection = () => {
             } else {
                 setStatus("error");
             }
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
             setStatus("error");
         }
