@@ -15,6 +15,10 @@ export const ContactSection = () => {
         
         formData.append("access_key", "f3e93440-4d38-4ba5-9f59-240f911bdc66");
 
+        const userEmail = formData.get("email");
+
+        formData.append("subject", `Pesan Baru dari Portfolio - ${userEmail}`);
+
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
