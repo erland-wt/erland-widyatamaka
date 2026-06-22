@@ -4,6 +4,7 @@ import { Badge } from "@/components/atoms/Badge/Badge";
 import { Typography } from "@/components/atoms/Typography/Typography";
 import { ProfileCard } from "@/components/molecules/ProfileCard/ProfileCard";
 import { Typewriter } from "@/components/atoms/Typewriter/Typewriter";
+import Link from "next/link";
 
 export const HeroSection = () => {
     return (
@@ -35,12 +36,16 @@ export const HeroSection = () => {
                     </Typography>
 
                     <div className="flex w-full sm:w-4/5 gap-2 items-center justify-center lg:justify-start">
-                        <Button variant="primary" size="lg" className="font-krona text-xs w-full rounded-r-none">
-                            Get In Touch
-                        </Button>
-                        <Button variant="green" size="lg" className="font-krona text-xs w-full rounded-l-none">
-                            View Projects
-                        </Button>
+                        <Link href="#contact">
+                            <Button variant="primary" size="lg" className="font-krona text-xs w-full rounded-r-none">
+                                Get In Touch
+                            </Button>
+                        </Link>
+                        <Link href="#projects">
+                            <Button variant="green" size="lg" className="font-krona text-xs w-full rounded-l-none">
+                                View Projects
+                            </Button>
+                        </Link>
                     </div>
                 </div>
 
