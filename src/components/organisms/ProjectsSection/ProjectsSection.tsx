@@ -4,44 +4,12 @@ import { useState } from "react";
 import { Typography } from "@/components/atoms/Typography/Typography";
 import { ProjectCard } from "@/components/molecules/ProjectCard/ProjectCard";
 import BackgroundOrnaments from "@/components/atoms/BackgroundOrnaments";
-
-// Data Array Proyek yang Mudah di-Maintain
-const PROJECTS_DATA = [
-    {
-        title: "Sentiment Analysis Platform",
-        description: "An AI-based web application that can analyze sentiment from user input, ranging from a simple sentence to several long paragraphs. Built with a Python FastAPI backend and a React frontend, this platform provides real-time sentiment analysis results with an intuitive user interface.",
-        imageSrc: "/images/sentiment-analysis-mockup.webp",
-        techStack: ["Python", "FastAPI", "React", "Tailwind CSS", "Scikit-learn"],
-        liveUrl: "https://sentiment-analysis-platform.vercel.app/",
-        githubUrl: "https://github.com/erland-wt/sentiment-analysis-platform",
-        isLatest: true,
-    },
-    {
-        title: "Pola Resik Optima Company Profile",
-        description: "A modern, highly responsive company profile website built for a security technology provider, showcasing their products and corporate identity.",
-        imageSrc: "/images/pola-resik-optima-mockup.webp",
-        techStack: ["Next.js", "Tailwind CSS"],
-        liveUrl: "https://polaresikoptima.com/",
-        isLatest: true,
-    },
-    {
-        title: "Nusantara Xray Company Profile",
-        description: "A modern, highly responsive company profile website built for a security technology provider, showcasing their products and corporate identity.",
-        imageSrc: "/images/nusantara-xray-mockup.webp",
-        techStack: ["React", "Tailwind CSS"],
-        liveUrl: "https://nusantaraxray.com/",
-    },
-    {
-        title: "Canvas and Code",
-        description: "A modern, highly responsive company profile website built for a security technology provider, showcasing their products and corporate identity.",
-        imageSrc: "/images/canvas-code-mockup.webp",
-        techStack: ["Next.js", "Tailwind CSS"],
-        liveUrl: "https://canvas-code-beta.vercel.app/",
-    },
-];
+import { ProjectModal, ProjectDetails } from "@/components/molecules/ProjectModal/ProjectModal";
+import { PROJECTS_DATA } from "@/constants/projects";
 
 export const ProjectsSection = () => {
     const [currentPage, setCurrentPage] = useState(1);
+    const [selectedProject, setSelectedProject] = useState<ProjectDetails | null>(null);
     const itemsPerPage = 6;
     const totalPages = Math.ceil(PROJECTS_DATA.length / itemsPerPage);
 
@@ -80,6 +48,11 @@ export const ProjectsSection = () => {
                             liveUrl={project.liveUrl}
                             githubUrl={project.githubUrl}
                             isLatest={project.isLatest}
+                            gallery={project.gallery}
+                            features={project.features}
+                            challenges={project.challenges}
+                            learning={project.learning}
+                            onClick={() => setSelectedProject(project)}
                         />
                     ))}
                 </div>
@@ -140,6 +113,10 @@ export const ProjectsSection = () => {
                     </div>
                 )}
             </div>
+
+            {selectedProject && (
+                <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+            )}
         </section>
     );
 };
