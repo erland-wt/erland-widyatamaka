@@ -28,7 +28,7 @@ export const PROJECTS_DATA: ProjectDetails[] = [
     {
         title: "Sentiment Analysis Platform",
         description: "An AI-based web application that can analyze sentiment from user input, ranging from a simple sentence to several long paragraphs. Built with a Python FastAPI backend and a React frontend, this platform provides real-time sentiment analysis results with an intuitive user interface.",
-        imageSrc: "/images/sentiment-analysis-mockup.webp",
+        imageSrc: "/images/sentiment-analyzer/sentiment-analysis-mockup.webp",
         techStack: ["Python", "FastAPI", "React", "Tailwind CSS", "Scikit-learn"],
         liveUrl: "https://sentiment-analysis-platform.vercel.app/",
         githubUrl: "https://github.com/erland-wt/sentiment-analysis-platform",
@@ -46,7 +46,7 @@ export const PROJECTS_DATA: ProjectDetails[] = [
     {
         title: "Pola Resik Optima Company Profile",
         description: "A modern, highly responsive company profile website built for a security technology provider, showcasing their products and corporate identity.",
-        imageSrc: "/images/pola-resik-optima-mockup.webp",
+        imageSrc: "/images/pola-resik-optima/pola-resik-optima-mockup.webp",
         techStack: ["Next.js", "Tailwind CSS"],
         liveUrl: "https://polaresikoptima.com/",
         isLatest: true,
